@@ -1,0 +1,25 @@
+<%= erb :template %>
+<body>
+  <div class="container pt-4 mt-4">
+    <h1>Edit item </h1>
+    <div class="form-control">
+    <form method="POST" action="/items/update">
+        <p>        
+            <input name="name" type="text" placeholder="Item name" value="<%= items.name %>">
+        </p>
+        <p>
+            <input name="price" type="int" placeholder="item price" value="<%= items.price %>">
+        </p>
+        <p>
+            <select name="categories" class="form-select" style="width: 25%;" value="<%= items.category.id %>">
+                <option disabled selected><%= items.category.name %></option>
+                <% categories.each do |items| %>
+                  <option value="<%= items.id %>"> <%= items.name %> </option>
+                <% end %>
+            </select>
+        </p>
+        <button type="submit" class="btn btn-success"> Add Item </button>
+    </form>
+</div>
+  </div>
+</body>

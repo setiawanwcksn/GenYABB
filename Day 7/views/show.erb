@@ -1,0 +1,13 @@
+<%= erb :template %>
+<body>
+  <div class="container pt-4 mt-4">  
+    <div>
+      <h1>Item Details</h1>
+    </div>
+    <div>
+      <h5>Item name: <%= items.name %></h5>
+      <h5>Item Price : Rp. <%= items.price %></h5>
+      <h5>Item category :<%= items.category.name %></h5>   
+    </div>        
+  </div>
+</body>
