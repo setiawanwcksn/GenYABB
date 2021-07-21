@@ -51,11 +51,11 @@ get '/items/edit/:id' do
   }
 end
 
-post '/items/update/' do
+post '/items/update' do
   id = params['id']
   name = params['name']
   price = params['price']
   categories = params['categories']
-  create_new_item(name, price, categories)
+  update_an_item(id, name, price, categories)
   redirect '/'
 end

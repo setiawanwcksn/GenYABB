@@ -5,6 +5,7 @@
     <div class="form-control">
     <form method="POST" action="/items/update">
         <p>        
+          <input name="id" type="hidden" placeholder="Item name" value="<%= items.id %>">
             <input name="name" type="text" placeholder="Item name" value="<%= items.name %>">
         </p>
         <p>
@@ -12,7 +13,7 @@
         </p>
         <p>
             <select name="categories" class="form-select" style="width: 25%;" value="<%= items.category.id %>">
-                <option disabled selected><%= items.category.name %></option>
+                <option value="<%= items.category.id %>" disabled selected><%= items.category.name %></option>
                 <% categories.each do |items| %>
                   <option value="<%= items.id %>"> <%= items.name %> </option>
                 <% end %>

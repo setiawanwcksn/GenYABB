@@ -87,3 +87,9 @@ def show_details(id)
     
     return item
 end
+
+def update_an_item(id, name, price, categories)    
+    client = create_db_client
+    rawData = client.query("UPDATE items SET name = '#{name}',price = '#{price}' WHERE id_item = '#{id}'")
+    rawData2 = client.query("UPDATE item_categories SET fk_category = '#{categories}' WHERE fk_item = '#{id}'")
+end
