@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'sinatra/reloader'
-require_relative './db_connector'
+require_relative './db/db_connector'
+require_relative './models/m_items'
 
 get '/' do
   items = get_all_items
