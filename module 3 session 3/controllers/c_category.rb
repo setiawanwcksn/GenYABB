@@ -29,6 +29,7 @@ class CCategory
     end
     def show_item_belongs_to_category(id)
         items = MItem.items_belongs_to_category_id(id)
+        category = MCategory.get_category(id)
         renderer = ERB.new(File.read("./views/category/show.erb"))
         renderer.result(binding)
     end

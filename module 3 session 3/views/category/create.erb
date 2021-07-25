@@ -1,6 +1,23 @@
-<h1>Create new category</h1>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
-<form method="POST" action="/category/create">
-    <input type="text" name="name" placeholder="Category name">
-    <br><input type="submit">
-</form>
+<body>
+  <div class="container pt-4">
+    <h1 class="d-flex justify-content-center">Create new Category </h1>
+    <div class="">
+        <a class="btn btn-secondary" href="/item/list_categories">List of All Categories</a>
+    </div>
+  </div>
+  <center>
+    <div class="container">
+      <form method="POST" action="/category/create">
+        <div class="form-control">
+            <label for="">Name : </label>
+            <input type="text" name="name">    
+        </div>            
+            <br><input class="btn btn-success" type="Submit" value="Create">
+    </form>
+    </div>
+  </center>
+
+
