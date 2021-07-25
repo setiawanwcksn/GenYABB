@@ -5,7 +5,7 @@
     <input type="number" name="price" placeholder="Item price">
     <p>Select category</p>
     <% categories.each do |category| %>
-      <input type="radio" id="<%= category.id %>" name="category" value="<%= category.id %>">
+      <input type="checkbox" id="<%= category.id %>" name="category[]" value="<%= category.id %>">
       <label for="<%= category.id %>"><%= category.name %></label><br>
     <% end %>
     <br><input type="submit">

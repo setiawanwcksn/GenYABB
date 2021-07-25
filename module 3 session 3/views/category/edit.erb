@@ -1,0 +1,8 @@
+<h1>Edit Category</h1>
+
+<form method="POST" action="/category/edit">
+    <input name="id" value="<%= category.id %>" hidden>
+    <input type="text" name="name" value="<%= category.name %>">
+    
+    <br><input type="Submit" value="Update">
+</form>

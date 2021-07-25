@@ -1,0 +1,19 @@
+<h1>Items</h1>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+    <tr>
+    <% categories.each_with_index do |category, index| %>
+    <tr>
+        <td><%= index+1 %></td>
+        <td><%= category.name %></td>
+        <td><a href="/category/show?id=<%=category.id%>" style="text-decoration:none; color:blue">Show</a></td>
+        <td><a href="/category/edit?id=<%=category.id%>" style="text-decoration:none; color:green">Edit</a></td>
+        <td><button type="button" onclick="alert('Are you sure to delete this item?'); window.location.href = '/category/delete?id=<%=category.id%>';" style="color:red; cursor:pointer;">Delete</button></td>
+    <tr>
+    <% end %>
+</table>
+
+<a href="/category/create">Create Category </a>
