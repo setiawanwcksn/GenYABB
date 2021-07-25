@@ -71,7 +71,10 @@ post '/category/edit' do
     controller.edit_category(params)
     redirect '/item/list_categories'
 end
-
+get '/category/show' do
+    controller = CCategory.new
+    controller.show_item_belongs_to_category(params['id'])
+  end
 # post '/order' do
 #     controller = OrderController.new
 #     controller.create_order(params)

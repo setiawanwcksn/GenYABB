@@ -66,4 +66,9 @@ class MItem
         client = create_db_client
         client.query("DELETE FROM items WHERE id_item = #{id}")
     end
+    def self.items_belongs_to_category_id(id)
+        client = create_db_client
+        rawData = client.query("SELECT items.* FROM item_categories ic JOIN items ON items.id_item = ic.fk_item WHERE ic.fk_category = #{id}")
+        convert_sql_to_array(rawData)
+    end
 end

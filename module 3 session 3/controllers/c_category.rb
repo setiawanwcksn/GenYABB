@@ -27,4 +27,9 @@ class CCategory
     def edit_category(param)
         categories = MCategory.update_category(param)        
     end
+    def show_item_belongs_to_category(id)
+        items = MItem.items_belongs_to_category_id(id)
+        renderer = ERB.new(File.read("./views/category/show.erb"))
+        renderer.result(binding)
+    end
 end
