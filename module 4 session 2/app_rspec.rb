@@ -26,4 +26,11 @@ describe App do
         actual_output = @incremental.increment(input)
         expect(actual_output).to eq(expected_output)
     end
+    it 'should return [2, 0] when input [1, 9]' do
+        input = [1, 9]
+        expected_output = [2, 0]
+
+        actual_output = @incremental.increment(input)
+        expect(actual_output).to eq(expected_output)
+    end
 end
