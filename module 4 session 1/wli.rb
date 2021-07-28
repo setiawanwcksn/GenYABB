@@ -7,6 +7,6 @@ class WhoLikeIt
        "#{@names.join(' and ')} likes this"
     end
 end
-# wli = WhoLikeIt.new
+# wli = WhoLikeIt.newz
 # wli.names = ["lala","lili"]
 # wli.likes
