@@ -1,10 +1,10 @@
 require_relative '../models/m_item'
 require_relative '../models/m_category'
- 
+
 class CItem
     def list_all_items
         items = MItem.get_all_items
-        renderer = ERB.new(File.read("./views/index.erb"))
+        renderer = ERB.new(File.read("app/views/index.erb"))
         renderer.result(binding)
     end
     def create_item(param)
@@ -18,7 +18,7 @@ class CItem
     end
     def create_item_form
         categories = MCategory.get_all_categories
-        renderer = ERB.new(File.read("./views/create.erb"))
+        renderer = ERB.new(File.read("app/views/create.erb"))
         renderer.result(binding)
     end
     def show_item(param)        
@@ -27,7 +27,7 @@ class CItem
         for value in item.category do
             categoryarr.push(value.name)
         end     
-        renderer = ERB.new(File.read("./views/show.erb"))
+        renderer = ERB.new(File.read("app/views/show.erb"))
         renderer.result(binding)
     end
     def edit_form(param)
@@ -37,7 +37,7 @@ class CItem
             categoryarr.push(value.id)
         end  
         categories = MCategory.get_all_categories
-        renderer = ERB.new(File.read("./views/edit.erb"))
+        renderer = ERB.new(File.read("app/views/edit.erb"))
         renderer.result(binding)
     end
     def edit_item(param)
